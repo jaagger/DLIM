@@ -1,3 +1,5 @@
+python==3.8.18
+
 pytorch==2.2.1
 
 cuda==11.8	
