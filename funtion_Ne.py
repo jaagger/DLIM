@@ -119,8 +119,6 @@ def ne_profile_function(latobs, lonobs, ltobs, doyobs, f107obs, kpobs, symhobs, 
             if LT <= 0:
                 LT += 24
 
-            # fft_in_tensor = torch.tensor([doy_fixed, lt_fixed, lat_point, lon_point], dtype=torch.float32)
-            # fft_in_tensors.append(fft_in_tensor)
 
             doy_sin = custom_periodic_sin(torch.tensor(doy_fixed), 365.25)
             lt_sin = custom_periodic_sin(torch.tensor(LT), 24)
@@ -225,15 +223,3 @@ def ne_profile_function(latobs, lonobs, ltobs, doyobs, f107obs, kpobs, symhobs, 
             Ne_model = Ne_model * 1000000
 
     return Ne_model,alt
-
-lat=20
-lon=20
-lt=12
-doy = 103
-kp = 0.7
-f107 = 75.3
-symh = -16
-
-NEnow,alt=ne_profile_function(lat, lon, lt, doy, f107, kp, symh)
-
-print(NEnow,alt)
