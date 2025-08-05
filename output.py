@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 
 from funtion_Ne import *
 
+# all of these parameters can be changed
 lat=20
 lon=20
 lt=12
@@ -15,6 +16,8 @@ kp = 0.7
 f107 = 75.3
 symh = -16
 
-NEnow,alt=ne_profile_function(lat, lon, lt, doy, f107, kp, symh)
 
-print(NEnow,alt)
+Ne,alt=ne_profile_function(lat, lon, lt, doy, f107, kp, symh)
+
+
+print(Ne,alt)
